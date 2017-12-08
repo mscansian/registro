@@ -1,6 +1,6 @@
 FROM golang:latest
 RUN go get -d -v github.com/gorilla/mux && \
-	mkdir -p $GOPATH/src/github.com/mscansian/registro
-ADD . $GOPATH/src/github.com/mscansian/registro
-WORKDIR $GOPATH/src/github.com/mscansian/registro
+	mkdir -p $GOPATH/src/github.com/numercfd/registro
+ADD . $GOPATH/src/github.com/numercfd/registro
+WORKDIR $GOPATH/src/github.com/numercfd/registro
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o registro .

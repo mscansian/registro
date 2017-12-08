@@ -25,20 +25,20 @@ Please note that the *--addr :8000* sets the listening address for the server
 socket and it's not required. Default is *:8080*.
 
 	$ go get -d github.com/gorilla/mux
-	$ cd $GOPATH/src/github.com/mscansian/registro
+	$ cd $GOPATH/src/github.com/numercfd/registro
 	$ go build -o registro .
 	$ ./registro --addr :8080
 
 ### Docker ###
 The following script will build a docker image and run with default options. It
-should create two images *mscansian/registro:build* for the build environment
-and a small *mscansian/registro:latest* image for the application itself.
+should create two images *numercfd/registro:build* for the build environment
+and a small *numercfd/registro:latest* image for the application itself.
 
 Please note that the *--addr :8000* sets the listening address for the server
 socket and it's not required. Default is *:8080*.
 
 	$ ./build.sh
-	$ docker run --rm -p 8000:8000 mscansian/registro --addr :8000
+	$ docker run --rm -p 8000:8000 numercfd/registro --addr :8000
 
 ## Client ##
 The client is a library that simplify the handling of request to the service
@@ -46,7 +46,7 @@ registry REST server.
 
 Documentation available in:
 
-	$ godoc github.com/mscansian/registro/client
+	$ godoc github.com/numercfd/registro/client
 
 ## Client Usage ##
 Clients need to create an application (if not exists), register itself as an
@@ -55,7 +55,7 @@ instance and send a heartbeat every 30 seconds.
 	import (
 		"log"
 		"time"
-		"github.com/mscansian/registro/client"
+		"github.com/numercfd/registro/client"
 	)
 	
 	c := client.NewClient("http://localhost:8000/registro")
@@ -74,3 +74,6 @@ instance and send a heartbeat every 30 seconds.
 		}
 	}()
 	<-time.After(90 * time.Second)
+
+## License ##
+This project was developed by [NUMER Simulação Numérica](https://numer.com.br) and is available under the MIT license.

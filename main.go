@@ -10,7 +10,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/mscansian/registro/server"
+	"github.com/numercfd/registro/server"
 )
 
 func main() {
